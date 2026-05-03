@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#101010">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>HonestPDF</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Header -->
+<header class="header">
+  <div class="header-title">HonestPDF</div>
+  <div class="header-sub">Offline PDF toolkit</div>
+</header>
+
+<!-- Category Tabs -->
+<div class="tabs" id="tabs">
+  <button class="tab active" data-cat="all">All</button>
+  <button class="tab" data-cat="operations">Modify</button>
+  <button class="tab" data-cat="fromPdf">Export</button>
+  <button class="tab" data-cat="toPdf">Import</button>
+  <button class="tab" data-cat="security">Security</button>
+  <button class="tab" data-cat="enhance">Annotate</button>
+  <button class="tab" data-cat="advanced">Advanced</button>
+</div>
+
+<!-- Main Scroll -->
+<main class="main" id="mainView">
+  <div id="toolSections"></div>
+  <div class="credit">by <a href="https://github.com/SumitkCodes" target="_blank">Sumit Das</a></div>
+</main>
+
+<!-- Tool View -->
+<div class="tool-view hidden" id="toolView">
+  <div class="tv-header">
+    <button class="tv-back" id="backBtn">← Back</button>
+    <div class="tv-title" id="toolTitle"></div>
+  </div>
+  <div class="tv-desc" id="toolDescription"></div>
+  <div class="tv-body" id="toolBody"></div>
+</div>
+
+<!-- Toast -->
+<div class="toast-container" id="toastContainer"></div>
+
+<!-- Loading -->
+<div class="loading hidden" id="loadingOverlay">
+  <div class="spinner"></div>
+  <p id="loadingText">Processing…</p>
+</div>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+# Dependencies
+node_modules/
+android-app/node_modules/
+
+# Build outputs (too large for git — use Releases instead)
+dist/
+
+# OS files
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# Editor
+.vscode/
+.idea/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Temp
+/tmp/
+*.tmp
+
+# Android build cache
+android-app/android/.gradle/
+android-app/android/app/build/
+android-app/android/build/
+android-app/android/local.properties
+android-app/android/.idea/
+
+# Electron builder cache
+.cache/
+builder-effective-config.yaml
+
+# Assets intermediate files
+assets/icon.iconset/
+assets/icon_1024.png
+assets/icon_clean.png
+assets/icon.svg
+assets/README.md
+
+# Large binaries (use GitHub Releases)
+download_app/mac/
+download_app/windows/
+download_app/android/
