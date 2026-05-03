@@ -1,0 +1,107 @@
+{
+  "name": "honestpdf",
+  "version": "1.0.0",
+  "description": "HonestPDF - Complete offline PDF toolkit. No cloud, no tracking.",
+  "main": "main.js",
+  "author": {
+    "name": "Sumit Das",
+    "url": "https://github.com/SumitkCodes"
+  },
+  "homepage": "https://github.com/SumitkCodes",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --mac --win",
+    "build:mac": "electron-builder --mac",
+    "build:win": "electron-builder --win",
+    "build:mac:dmg": "electron-builder --mac dmg",
+    "build:win:installer": "electron-builder --win nsis",
+    "pack": "electron-builder --dir",
+    "test": "node scripts/test.js"
+  },
+  "dependencies": {
+    "pdf-lib": "^1.17.1",
+    "@pdf-lib/fontkit": "^1.1.1",
+    "pdfjs-dist": "^3.11.174",
+    "tesseract.js": "^5.0.4",
+    "mammoth": "^1.6.0",
+    "docx": "^8.5.0",
+    "exceljs": "^4.4.0",
+    "pptxgenjs": "^3.12.0",
+    "jszip": "^3.10.1"
+  },
+  "devDependencies": {
+    "electron": "^28.3.3",
+    "electron-builder": "^24.9.1"
+  },
+  "build": {
+    "appId": "com.honestpdf.app",
+    "productName": "HonestPDF",
+    "copyright": "Copyright © 2024 HonestPDF",
+    "asar": true,
+    "asarUnpack": [
+      "node_modules/tesseract.js/**/*",
+      "node_modules/pdfjs-dist/**/*"
+    ],
+    "files": [
+      "main.js",
+      "src/**/*",
+      "node_modules/**/*",
+      "!node_modules/.cache/**/*",
+      "!node_modules/electron-builder/**/*",
+      "!node_modules/electron/**/*",
+      "!**/*.map",
+      "!**/*.md",
+      "!**/*.ts",
+      "!**/test/**/*",
+      "!**/tests/**/*",
+      "!**/spec/**/*",
+      "!**/example/**/*",
+      "!**/examples/**/*",
+      "!**/demo/**/*"
+    ],
+    "directories": {
+      "buildResources": "assets",
+      "output": "dist"
+    },
+    "mac": {
+      "target": [
+        { "target": "dmg", "arch": ["x64", "arm64"] },
+        { "target": "zip", "arch": ["x64", "arm64"] }
+      ],
+      "category": "public.app-category.productivity",
+      "darkModeSupport": true,
+      "hardenedRuntime": false,
+      "gatekeeperAssess": false,
+      "icon": "assets/icon.icns"
+    },
+    "win": {
+      "target": [
+        { "target": "nsis", "arch": ["x64"] },
+        { "target": "portable", "arch": ["x64"] }
+      ],
+      "icon": "assets/icon.ico",
+      "requestedExecutionLevel": "asInvoker"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "allowElevation": true,
+      "installerIcon": "assets/icon.ico",
+      "uninstallerIcon": "assets/icon.ico",
+      "installerHeaderIcon": "assets/icon.ico",
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "HonestPDF"
+    },
+    "dmg": {
+      "title": "HonestPDF Installer",
+      "contents": [
+        { "x": 150, "y": 180, "type": "file" },
+        { "x": 400, "y": 180, "type": "link", "path": "/Applications" }
+      ],
+      "window": { "width": 560, "height": 350 }
+    },
+    "publish": null
+  }
+}
