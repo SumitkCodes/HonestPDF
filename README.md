@@ -14,7 +14,6 @@ HonestPDF does all of that. On your machine. Offline. No uploads, no accounts, n
 |----------|----------|------|
 | **macOS** (Apple Silicon) | [HonestPDF-Mac.dmg](https://github.com/SumitkCodes/HonestPDF/releases/latest) | ~117 MB |
 | **Windows** (64-bit) | [HonestPDF-Windows.exe](https://github.com/SumitkCodes/HonestPDF/releases/latest) | ~75 MB |
-| **Android** | [Build instructions](#android) | — |
 
 > **Windows:** It's a portable exe. Just double-click and go. If SmartScreen complains, click "More info" → "Run anyway" — the app isn't signed with a $300/yr certificate, that's all.
 >
@@ -104,7 +103,6 @@ That's it. No contacts, no location, no microphone, no "usage analytics," no tel
 
 - **macOS** — 10.13+ (Intel & Apple Silicon)
 - **Windows** — 10/11 (64-bit)
-- **Android** — 8.0+ (via Capacitor — see build instructions below)
 
 ---
 
@@ -131,27 +129,8 @@ Not that you need to care, but if you're curious:
 - **Ghostscript** — Heavy-duty compression (optional, uses canvas fallback)
 - **tesseract.js** — OCR (runs entirely in-browser, no API calls)
 - **docx / exceljs / pptxgenjs** — Document generation for conversions
-- **Capacitor** — Android wrapper for the mobile version
 
 Everything is bundled. No runtime downloads. No CDN dependencies in the desktop app.
-
----
-
-## <a name="android"></a> Building for Android
-
-The Android project is ready but needs Android Studio to compile:
-
-```bash
-# Install Android Studio from https://developer.android.com/studio
-# Then:
-
-cd android-app
-npx cap sync android
-npx cap open android
-
-# In Android Studio: Build → Build APK
-# APK will be at: android/app/build/outputs/apk/debug/app-debug.apk
-```
 
 ---
 

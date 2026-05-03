@@ -1,6 +1,6 @@
 # Dependencies
 node_modules/
-android-app/node_modules/
+android-app/
 
 # Build outputs (too large for git — use Releases instead)
 dist/
